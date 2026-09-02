@@ -13,12 +13,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     //Pantry Table
-    private static final String TABLE_PANTRY = "pantry_items";
-    private static final String COLUMN_PANTRY_ID = "id";
-    private static final String COLUMN_PANTRY_NAME = "name";
-    private static final String COLUMN_PANTRY_QUANTITY = "quantity";
-    private static final String COLUMN_PANTRY_UNIT = "unit";
-    private static final String COLUMN_PANTRY_EXPIRY = "expiry_date";
+    public static final String TABLE_PANTRY = "pantry_items";
+    public static final String COLUMN_PANTRY_ID = "id";
+    public static final String COLUMN_PANTRY_NAME = "name";
+    public static final String COLUMN_PANTRY_QUANTITY = "quantity";
+    public static final String COLUMN_PANTRY_UNIT = "unit";
+    public static final String COLUMN_PANTRY_EXPIRY = "expiry_date";
 
     //Recipe Table
     private static final String TABLE_RECIPES = "recipes";
