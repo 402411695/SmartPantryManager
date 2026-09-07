@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,10 +26,14 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         TextView textIngredientName;
         TextView textQuantity;
         TextView textExpiry;
+
+        Button buttonDeleteIngredient;
+
         public PantryViewHolder(@NonNull View itemView) { super(itemView);
             textIngredientName = itemView.findViewById(R.id.textIngredientName);
             textQuantity = itemView.findViewById(R.id.textQuantity);
             textExpiry = itemView.findViewById(R.id.textExpiry);
+            buttonDeleteIngredient = itemView.findViewById(R.id.buttonDeleteIngredient);
         }
     }
 
@@ -47,6 +52,14 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         holder.textIngredientName.setText(item.getName());
         holder.textQuantity.setText(item.getQuantity() + " " + item.getUnit());
         holder.textExpiry.setText(item.getExpiryDate());
+
+        holder.buttonDeleteIngredient.setOnClickListener(v -> {
+            PantryDAO pantryDAO = new PantryDAO(v.getContext());
+            pantryDAO.deletePantryItem(item.getId());
+            pantryItems.remove(position);
+            notifyItemRemoved(position);
+
+        });
 
 
     }

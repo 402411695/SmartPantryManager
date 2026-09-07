@@ -1,6 +1,9 @@
 package com.smartpantrymanager;
 
 import android.os.Bundle;
+import android.content.Intent;
+import android.widget.Button;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,12 +20,21 @@ public class MainActivity extends AppCompatActivity {
     private PantryAdapter pantryAdapter;
     private PantryDAO pantryDAO;
 
+    private Button buttonAddIngredient;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        buttonAddIngredient = findViewById(R.id.buttonAddIngredient);
+
+        buttonAddIngredient.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AddEditIngredientActivity.class);
+            startActivity(intent);
+        });
 
         recyclerViewPantry = findViewById(R.id.recyclerViewPantry);
 
@@ -42,4 +54,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (pantryDAO != null && recyclerViewPantry != null) {
+            ArrayList<PantryItem> pantryItems = new ArrayList<>(pantryDAO.getAllPantryItems());
+
+            pantryAdapter = new PantryAdapter(pantryItems);
+            recyclerViewPantry.setAdapter(pantryAdapter);
+
+        }
+    }
+
+
 }
