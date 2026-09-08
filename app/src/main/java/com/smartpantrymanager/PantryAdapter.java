@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Button;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,6 +59,17 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
             pantryDAO.deletePantryItem(item.getId());
             pantryItems.remove(position);
             notifyItemRemoved(position);
+
+        });
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), AddEditIngredientActivity.class);
+            intent.putExtra("ingredient_id", item.getId());
+            intent.putExtra("ingredient_name", item.getName());
+            intent.putExtra("ingredient_quantity", item.getQuantity());
+            intent.putExtra("ingredient_unit", item.getUnit());
+            intent.putExtra("ingredient_expiry", item.getExpiryDate());
+            v.getContext().startActivity(intent);
 
         });
 
