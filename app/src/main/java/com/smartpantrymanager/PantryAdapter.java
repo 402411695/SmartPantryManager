@@ -27,14 +27,17 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         TextView textIngredientName;
         TextView textQuantity;
         TextView textExpiry;
-
         Button buttonDeleteIngredient;
+
+        Button buttonEditIngredient;
 
         public PantryViewHolder(@NonNull View itemView) { super(itemView);
             textIngredientName = itemView.findViewById(R.id.textIngredientName);
             textQuantity = itemView.findViewById(R.id.textQuantity);
             textExpiry = itemView.findViewById(R.id.textExpiry);
             buttonDeleteIngredient = itemView.findViewById(R.id.buttonDeleteIngredient);
+            buttonEditIngredient = itemView.findViewById(R.id.buttonEditIngredient);
+
         }
     }
 
@@ -61,6 +64,20 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
             notifyItemRemoved(position);
 
         });
+
+        holder.buttonEditIngredient.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), AddEditIngredientActivity.class);
+            intent.putExtra("ingredient_id", item.getId());
+            intent.putExtra("ingredient_name", item.getName());
+            intent.putExtra("ingredient_quantity", item.getQuantity());
+            intent.putExtra("ingredient_unit", item.getUnit());
+            intent.putExtra("ingredient_expiry", item.getExpiryDate());
+            v.getContext().startActivity(intent);
+
+
+        });
+
+
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), AddEditIngredientActivity.class);
