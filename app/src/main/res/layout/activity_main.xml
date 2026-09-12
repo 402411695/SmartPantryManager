@@ -35,9 +35,23 @@
         android:layout_height="wrap_content"
         android:text="Add Ingredient"
         android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonViewRecipes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"    />
+
+    <Button
+    android:id="@+id/buttonViewRecipes"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="View Recipes"
+    android:layout_margin="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"    />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

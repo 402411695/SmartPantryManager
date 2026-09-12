@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database name and version
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     //Pantry Table
     public static final String TABLE_PANTRY = "pantry_items";
@@ -21,18 +21,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PANTRY_EXPIRY = "expiry_date";
 
     //Recipe Table
-    private static final String TABLE_RECIPES = "recipes";
-    private static final String COLUMN_RECIPE_ID = "id";
-    private static final String COLUMN_RECIPE_NAME = "name";
-    private static final String COLUMN_RECIPE_INSTRUCTIONS = "instructions";
+    public static final String TABLE_RECIPES = "recipes";
+    public static final String COLUMN_RECIPE_ID = "id";
+    public static final String COLUMN_RECIPE_NAME = "name";
+    public static final String COLUMN_RECIPE_INSTRUCTIONS = "instructions";
 
     //Recipe Ingredients Table
-    private static final String TABLE_RECIPE_INGREDIENTS = "recipe_ingredients";
-    private static final String COLUMN_RECIPE_INGREDIENT_ID = "id";
-    private static final String COLUMN_RECIPE_INGREDIENT_RECIPE_ID = "recipe_id";
-    private static final String COLUMN_RECIPE_INGREDIENT_NAME = "ingredient_name";
-    private static final String COLUMN_RECIPE_INGREDIENT_QUANTITY = "required_quantity";
-    private static final String COLUMN_RECIPE_INGREDIENT_UNIT = "unit";
+    public static final String TABLE_RECIPE_INGREDIENTS = "recipe_ingredients";
+    public static final String COLUMN_RECIPE_INGREDIENT_ID = "id";
+    public static final String COLUMN_RECIPE_INGREDIENT_RECIPE_ID = "recipe_id";
+    public static final String COLUMN_RECIPE_INGREDIENT_NAME = "ingredient_name";
+    public static final String COLUMN_RECIPE_INGREDIENT_QUANTITY = "required_quantity";
+    public static final String COLUMN_RECIPE_INGREDIENT_UNIT = "unit";
 
     //Constructor used to initialise the database helper
     public DatabaseHelper(Context context) {

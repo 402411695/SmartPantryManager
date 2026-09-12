@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonAddIngredient;
 
+    private Button buttonViewRecipes;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AddEditIngredientActivity.class);
             startActivity(intent);
         });
+
+        buttonViewRecipes = findViewById(R.id.buttonViewRecipes);
+
+        buttonViewRecipes.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
+            startActivity(intent);
+        });
+
+
+
 
         recyclerViewPantry = findViewById(R.id.recyclerViewPantry);
 
