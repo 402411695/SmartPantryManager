@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +50,17 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         holder.textRecipeName.setText(recipe.getName());
         holder.textRecipeInstructions.setText(recipe.getInstructions());
+
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), RecipeDetailsActivity.class);
+
+            intent.putExtra("recipe_name", recipe.getName());
+            intent.putExtra("recipe_instructions", recipe.getInstructions());
+            intent.putExtra("recipe_id", recipe.getId());
+
+            view.getContext().startActivity(intent);
+
+        });
     }
 
     @Override

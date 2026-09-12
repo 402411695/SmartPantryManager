@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database name and version
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     //Pantry Table
     public static final String TABLE_PANTRY = "pantry_items";
@@ -86,6 +86,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "('Pasta with Tomato Sauce', 'Boil pasta. Prepare tomato sauce. Combine and serve.')," +
                 "('Scrambled Eggs', 'Beat the eggs. Cook in a pan while stirring until done.')," +
                 "('Cheese Sandwich', 'Place cheese between two slices of bread and toast or serve cold.')");
+
+        db.execSQL("INSERT INTO " + TABLE_RECIPE_INGREDIENTS + "(" + COLUMN_RECIPE_INGREDIENT_RECIPE_ID + ", " +
+                COLUMN_RECIPE_INGREDIENT_NAME + ", " +
+                COLUMN_RECIPE_INGREDIENT_QUANTITY + ", " +
+                COLUMN_RECIPE_INGREDIENT_UNIT + ") VALUES " +
+                "(1, 'pasta', 200, 'g')," +
+                "(1, 'tomato', 2, 'whole')," +
+                "(1, 'salt', 1, 'tsp')," +
+                "(1, 'oil', 1, 'tbsp')");
+
     }
 }
 
