@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database name and version
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     //Pantry Table
     public static final String TABLE_PANTRY = "pantry_items";
@@ -67,6 +67,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "FOREIGN KEY (" + COLUMN_RECIPE_INGREDIENT_RECIPE_ID + ") REFERENCES " + TABLE_RECIPES + "(" + COLUMN_RECIPE_ID + ")" + ")";
 
         db.execSQL(createRecipeIngredientsTable);
+
+        insertInitialRecipes(db);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -76,6 +78,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         onCreate(db);
 
+    }
+
+    private void insertInitialRecipes(SQLiteDatabase db) {
+        db.execSQL("INSERT INTO " + TABLE_RECIPES +
+                " (" + COLUMN_RECIPE_NAME + ", " + COLUMN_RECIPE_INSTRUCTIONS + ") VALUES " +
+                "('Pasta with Tomato Sauce', 'Boil pasta. Prepare tomato sauce. Combine and serve.')," +
+                "('Scrambled Eggs', 'Beat the eggs. Cook in a pan while stirring until done.')," +
+                "('Cheese Sandwich', 'Place cheese between two slices of bread and toast or serve cold.')");
     }
 }
 
