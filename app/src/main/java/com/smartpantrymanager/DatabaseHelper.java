@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database name and version
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
 
     //Pantry Table
     public static final String TABLE_PANTRY = "pantry_items";
@@ -85,16 +85,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " (" + COLUMN_RECIPE_NAME + ", " + COLUMN_RECIPE_INSTRUCTIONS + ") VALUES " +
                 "('Pasta with Tomato Sauce', 'Boil pasta. Prepare tomato sauce. Combine and serve.')," +
                 "('Scrambled Eggs', 'Beat the eggs. Cook in a pan while stirring until done.')," +
-                "('Cheese Sandwich', 'Place cheese between two slices of bread and toast or serve cold.')");
+                "('Cheese Sandwich', 'Place cheese between two slices of bread and toast or serve cold.')," +
+                "('Chicken Salad', 'Cook the chicken. Chop the vegetables. Mix everything together.')," +
+                "('Vegetable Stir-Fry', 'Chop the vegetables. Stir-fry them in oil until tender.')," +
+                "('Tuna Sandwich', 'Mix tuna with mayonnaise. Place the mixture between slices of bread.')," +
+                "('Omelette', 'Beat the eggs. Add the vegetables and cook in a pan.')," +
+                "('Rice and Beans', 'Cook the rice. Heat the beans. Mix and serve.')");
 
-        db.execSQL("INSERT INTO " + TABLE_RECIPE_INGREDIENTS + "(" + COLUMN_RECIPE_INGREDIENT_RECIPE_ID + ", " +
+
+        db.execSQL("INSERT INTO " + TABLE_RECIPE_INGREDIENTS + " (" + COLUMN_RECIPE_INGREDIENT_RECIPE_ID + ", " +
                 COLUMN_RECIPE_INGREDIENT_NAME + ", " +
                 COLUMN_RECIPE_INGREDIENT_QUANTITY + ", " +
                 COLUMN_RECIPE_INGREDIENT_UNIT + ") VALUES " +
                 "(1, 'pasta', 200, 'g')," +
                 "(1, 'tomato', 2, 'whole')," +
                 "(1, 'salt', 1, 'tsp')," +
-                "(1, 'oil', 1, 'tbsp')");
+                "(1, 'oil', 1, 'tbsp')," +
+
+                "(2, 'eggs', 2, 'whole')," +
+                "(2, 'salt', 1, 'tsp')," +
+                "(2, 'oil', 1, 'tbsp')," +
+
+                "(3, 'bread', 2, 'slices')," +
+                "(3, 'cheese', 2, 'slices')," +
+
+                "(4, 'chicken', 200, 'g')," +
+                "(4, 'lettuce', 1, 'whole')," +
+                "(4, 'tomato', 1, 'whole')," +
+                "(4, 'cucumber', 1, 'whole')," +
+
+                "(5, 'carrot', 1, 'whole')," +
+                "(5, 'broccoli', 100, 'g')," +
+                "(5, 'pepper', 1, 'whole')," +
+                "(5, 'oil', 1, 'tbsp')," +
+
+                "(6, 'tuna', 1, 'can')," +
+                "(6, 'bread', 2, 'slices')," +
+                "(6, 'mayonnaise', 1, 'tbsp')," +
+
+                "(7, 'eggs', 2, 'whole')," +
+                "(7, 'tomato', 1, 'whole')," +
+                "(7, 'onion', 1, 'whole')," +
+                "(7, 'oil', 1, 'tbsp')," +
+
+                "(8, 'rice', 200, 'g')," +
+                "(8, 'beans', 1, 'can')," +
+                "(8, 'salt', 1, 'tsp');");
+
+
+
 
     }
 }
