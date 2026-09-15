@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database name and version
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 9;
 
     //Pantry Table
     public static final String TABLE_PANTRY = "pantry_items";
@@ -91,8 +91,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "('Tuna Sandwich', 'Mix tuna with mayonnaise. Place the mixture between slices of bread.')," +
                 "('Omelette', 'Beat the eggs. Add the vegetables and cook in a pan.')," +
                 "('Rice and Beans', 'Cook the rice. Heat the beans. Mix and serve.')," +
+                "('Baked Potatoes', 'Bake the potatoes until soft. Season and serve.'), " +
                 "('French Toast', 'Dip the bread in beaten eggs and fry until golden brown.')," +
-                "('Vegetable Pasta', 'Boil the pasta. Cook the vegetables and mix them with the pasta.')");
+                "('Chicken Wrap', 'Cook the chicken. Place the chicken and vegetables inside a wrap and serve.')," +
+                "('Vegetable Pasta', 'Boil the pasta. Cook the vegetables and mix them with the pasta.'),"
++               "('Tomato Soup', 'Cook the tomatoes with onion and water. Blend until smooth and season.')," +
+                "('Vegetable Rice Bowl', 'Cook the rice. Add cooked vegetables and mix together. Serve warm.')," +
+                "('Tuna Pasta', 'Cook the pasta. Mix with tuna and mayonnaise, then serve.')");
 
 
         db.execSQL("INSERT INTO " + TABLE_RECIPE_INGREDIENTS + " (" + COLUMN_RECIPE_INGREDIENT_RECIPE_ID + ", " +
