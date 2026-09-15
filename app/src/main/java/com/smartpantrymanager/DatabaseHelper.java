@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Database name and version
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 12;
 
     //Pantry Table
     public static final String TABLE_PANTRY = "pantry_items";
@@ -104,42 +104,79 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_RECIPE_INGREDIENT_NAME + ", " +
                 COLUMN_RECIPE_INGREDIENT_QUANTITY + ", " +
                 COLUMN_RECIPE_INGREDIENT_UNIT + ") VALUES " +
+                //Recipe 1:  Pasta with tomato sauce
                 "(1, 'pasta', 200, 'g')," +
                 "(1, 'tomato', 2, 'whole')," +
                 "(1, 'salt', 1, 'tsp')," +
                 "(1, 'oil', 1, 'tbsp')," +
 
+                //Recipe 2:  Scrambled eggs
                 "(2, 'eggs', 2, 'whole')," +
                 "(2, 'salt', 1, 'tsp')," +
                 "(2, 'oil', 1, 'tbsp')," +
 
+                //Recipe 3:  Cheese Sandwich
                 "(3, 'bread', 2, 'slices')," +
                 "(3, 'cheese', 2, 'slices')," +
 
+                //Recipe 4:  Chicken Salad
                 "(4, 'chicken', 200, 'g')," +
                 "(4, 'lettuce', 1, 'whole')," +
                 "(4, 'tomato', 1, 'whole')," +
                 "(4, 'cucumber', 1, 'whole')," +
 
+                //Recipe 5:  Vegetable Stirfry
                 "(5, 'carrot', 1, 'whole')," +
                 "(5, 'broccoli', 100, 'g')," +
                 "(5, 'pepper', 1, 'whole')," +
                 "(5, 'oil', 1, 'tbsp')," +
 
+                //Recipe 6:  Tuna Sandwich
                 "(6, 'tuna', 1, 'can')," +
                 "(6, 'bread', 2, 'slices')," +
                 "(6, 'mayonnaise', 1, 'tbsp')," +
 
+                //Recipe 7:  Omelette
                 "(7, 'eggs', 2, 'whole')," +
                 "(7, 'tomato', 1, 'whole')," +
                 "(7, 'onion', 1, 'whole')," +
                 "(7, 'oil', 1, 'tbsp')," +
 
+                //Recipe 8:  Rice and Beans
                 "(8, 'rice', 200, 'g')," +
                 "(8, 'beans', 1, 'can')," +
-                "(8, 'salt', 1, 'tsp');");
+                "(8, 'salt', 1, 'tsp')," +
 
+                //Recipe 9:  Baked Potatoes
+                "(9, 'potatoes', 2, 'whole')," +
+                "(9, 'oil', 1, 'tbsp')," +
 
+                //Recipe 10:  French Toast
+                "(10, 'bread', 2, 'slices')," +
+                "(10, 'eggs', 2, 'whole')," +
+                "(10, 'milk', 100, 'ml')," +
+                "(10, 'oil', 1, 'tbsp')," +
+
+                //Recipe 11:  Chicken Wrap
+                "(11, 'chicken', 150, 'g')," +
+                "(11, 'wrap', 1, 'whole')," +
+                "(11, 'lettuce', 30, 'g')," +
+
+                //Recipe 12:  Vegetable Pasta
+                "(12, 'pasta', 200, 'g')," +
+                "(12, 'mixed vegetables', 150, 'g')," +
+
+                //Recipe 13:  Tomato Soup
+                "(13, 'tomato', 3, 'whole')," +
+                "(13, 'water', 250, 'ml')," +
+
+                //Recipe 14:  Vegetable Rice Bowl
+                "(14, 'rice', 200, 'g')," +
+                "(14, 'mixed vegetables', 150, 'g')," +
+
+                //Recipe 15:  Tuna Pasta
+                "(15, 'tuna', 1, 'can')," +
+                "(15, 'pasta', 200, 'g')");
 
 
     }
