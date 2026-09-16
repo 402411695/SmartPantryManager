@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonViewRecipes;
 
+    private Button buttonSuggestedRecipes;
+
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
         buttonViewRecipes.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
+            startActivity(intent);
+        });
+
+        buttonSuggestedRecipes = findViewById(R.id.buttonSuggestedRecipes);
+
+        buttonSuggestedRecipes.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SuggestedRecipesActivity.class);
             startActivity(intent);
         });
 
