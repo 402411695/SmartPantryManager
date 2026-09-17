@@ -3,14 +3,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/textIngredientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ingredient_name"
-        android:textSize="18sp"
+        android:textColor="#222222"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
@@ -18,27 +19,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/quantity"
-        android:textSize="16sp" />
+        android:textColor="#222222"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textExpiry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/expiry_date"
-        android:textSize="14sp" />
+        android:textColor="#222222"
+        android:textSize="12sp" />
 
-   <Button
-    android:id="@+id/buttonEditIngredient"
-    android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:text="Edit" />
-
-
-    <Button
-        android:id="@+id/buttonDeleteIngredient"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Delete" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" >
 
+        <Button
+            android:id="@+id/buttonEditIngredient"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5F6F52"
+            android:textColor="#FFFFFF"
+            android:text="Edit"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/buttonDeleteIngredient"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5F6F52"
+            android:textColor="#FFFFFF"
+            android:text="Delete"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
 </LinearLayout>

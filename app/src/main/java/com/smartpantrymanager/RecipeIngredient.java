@@ -42,7 +42,7 @@ public class RecipeIngredient {
     }
 
     public void setRecipeId(int recipeId) {
-        this.recipeId = getRecipeId();
+        this.recipeId = recipeId;
     }
 
     public void setIngredientName(String ingredientName) {

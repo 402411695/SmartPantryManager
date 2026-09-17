@@ -78,19 +78,6 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         });
 
 
-
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), AddEditIngredientActivity.class);
-            intent.putExtra("ingredient_id", item.getId());
-            intent.putExtra("ingredient_name", item.getName());
-            intent.putExtra("ingredient_quantity", item.getQuantity());
-            intent.putExtra("ingredient_unit", item.getUnit());
-            intent.putExtra("ingredient_expiry", item.getExpiryDate());
-            v.getContext().startActivity(intent);
-
-        });
-
-
     }
 
 

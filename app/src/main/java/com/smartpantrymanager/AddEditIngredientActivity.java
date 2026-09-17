@@ -31,6 +31,12 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_edit_ingredient);
 
+        Button buttonBack = findViewById(R.id.buttonBack);
+
+        buttonBack.setOnClickListener(v -> {
+            finish();
+        });
+
 
         editIngredientName = findViewById(R.id.editIngredientName);
         editIngredientQuantity = findViewById(R.id.editIngredientQuantity);
