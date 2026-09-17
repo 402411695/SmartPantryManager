@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonViewRecipes;
     private Button buttonSuggestedRecipes;
 
+    private Button buttonSettings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAddIngredient = findViewById(R.id.buttonAddIngredient);
         buttonViewRecipes = findViewById(R.id.buttonViewRecipes);
         buttonSuggestedRecipes = findViewById(R.id.buttonSuggestedRecipes);
+        buttonSettings = findViewById(R.id.buttonSettings);
         recyclerViewPantry = findViewById(R.id.recyclerViewPantry);
 
         buttonAddIngredient.setOnClickListener(v -> {
@@ -57,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
             );
             startActivity(intent);
         });
+
+        buttonSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    SettingsActivity.class
+            );
+            startActivity(intent);
+        });
+
+
 
         pantryDAO = new PantryDAO(this);
 

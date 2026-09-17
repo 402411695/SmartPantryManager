@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kitchen_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BFFFFFFF"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#5F6F52"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textSettingsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Settings / Profile"
+            android:textColor="#222222"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@id/buttonBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textAppName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Smart Pantry Manager"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp"
+            app:layout_constraintTop_toBottomOf="@id/textSettingsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textAppDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Manage pantry ingredients and discover recipes using ingredients already available at home."
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:paddingBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/textAppName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textDatabase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Database: SQLite"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            android:paddingBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/textAppDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkExpiryReminders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Enable expiry reminders"
+            android:textColor="#222222"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/textDatabase"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

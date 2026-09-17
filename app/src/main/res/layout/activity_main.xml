@@ -58,25 +58,64 @@
                 android:id="@+id/buttonAddIngredient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
                 android:backgroundTint="#5F6F52"
+                android:drawableLeft="@drawable/ic_add"
+                android:drawableTint="#FFFFFF"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="Add Ingredient"
                 android:textColor="#FFFFFF"
-                android:text="Add Ingredient" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/buttonSuggestedRecipes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
                 android:backgroundTint="#5F6F52"
+                android:drawableLeft="@drawable/ic_recipe"
+                android:drawableTint="#FFFFFF"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="Suggested Recipes"
                 android:textColor="#FFFFFF"
-                android:text="Suggested Recipes" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/buttonViewRecipes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
                 android:backgroundTint="#5F6F52"
+                android:drawableLeft="@drawable/ic_book"
+                android:drawableTint="#FFFFFF"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="View Recipes"
                 android:textColor="#FFFFFF"
-                android:text="View Recipes" />
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/buttonSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#5F6F52"
+                android:drawableLeft="@drawable/ic_settings"
+                android:drawableTint="#FFFFFF"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="Settings"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
